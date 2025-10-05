@@ -1,3 +1,4 @@
+
 "use client";
 
 import { zodResolver } from "@hookform/resolvers/zod";
@@ -17,7 +18,7 @@ import { Input } from "@/components/ui/input";
 import { Textarea } from "@/components/ui/textarea";
 import { Card, CardContent, CardHeader, CardTitle, CardDescription } from "@/components/ui/card";
 import { useToast } from "@/hooks/use-toast";
-import { Send, Github } from "lucide-react";
+import { Send, Github, Linkedin, Mail, Phone } from "lucide-react";
 import { useSectionInView } from "@/hooks/use-section-in-view";
 
 const formSchema = z.object({
@@ -118,10 +119,25 @@ export default function ContactSection() {
                   </Button>
                 </form>
               </Form>
-                <div className="text-center mt-8">
+                <div className="text-center mt-8 flex justify-center gap-4">
                     <Button variant="outline" asChild>
-                        <a href="https://github.com" target="_blank" rel="noopener noreferrer">
-                            <Github className="mr-2 h-4 w-4" /> View my GitHub
+                        <a href="mailto:KranthiPedamajji3@gmail.com">
+                            <Mail className="mr-2 h-4 w-4" /> Email Me
+                        </a>
+                    </Button>
+                     <Button variant="outline" asChild>
+                        <a href="tel:+18565267280">
+                            <Phone className="mr-2 h-4 w-4" /> Call Me
+                        </a>
+                    </Button>
+                    <Button variant="outline" asChild>
+                        <a href="https://www.linkedin.com/in/kranthi-pedamajji-34a10719b/" target="_blank" rel="noopener noreferrer">
+                            <Linkedin className="mr-2 h-4 w-4" /> LinkedIn
+                        </a>
+                    </Button>
+                    <Button variant="outline" asChild>
+                        <a href="https://github.com/KranthiPedamajji" target="_blank" rel="noopener noreferrer">
+                            <Github className="mr-2 h-4 w-4" /> GitHub
                         </a>
                     </Button>
                 </div>

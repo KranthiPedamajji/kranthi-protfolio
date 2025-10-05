@@ -5,6 +5,7 @@ import { Button } from "@/components/ui/button";
 import Typewriter from "@/components/typewriter";
 import Link from "next/link";
 import { useSectionInView } from "@/hooks/use-section-in-view";
+import { Github, Linkedin, Mail, Phone } from "lucide-react";
 
 export default function HeroSection() {
   const { ref } = useSectionInView("home", 0.5);
@@ -40,6 +41,24 @@ export default function HeroSection() {
             <Link href="#contact">Contact Me</Link>
           </Button>
         </div>
+        <div className="flex justify-center gap-6 mt-12">
+            <a href="mailto:KranthiPedamajji3@gmail.com" className="text-foreground/70 hover:text-primary transition-colors">
+              <Mail className="h-6 w-6" />
+              <span className="sr-only">Email</span>
+            </a>
+            <a href="tel:+18565267280" className="text-foreground/70 hover:text-primary transition-colors">
+              <Phone className="h-6 w-6" />
+              <span className="sr-only">Phone</span>
+            </a>
+            <a href="https://www.linkedin.com/in/kranthi-pedamajji-34a10719b/" target="_blank" rel="noopener noreferrer" className="text-foreground/70 hover:text-primary transition-colors">
+              <Linkedin className="h-6 w-6" />
+              <span className="sr-only">LinkedIn</span>
+            </a>
+            <a href="https://github.com/KranthiPedamajji" target="_blank" rel="noopener noreferrer" className="text-foreground/70 hover:text-primary transition-colors">
+              <Github className="h-6 w-6" />
+              <span className="sr-only">GitHub</span>
+            </a>
+          </div>
       </div>
     </section>
   );
