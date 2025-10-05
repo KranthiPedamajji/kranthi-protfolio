@@ -11,23 +11,25 @@ import {
   Component,
   BrainCircuit,
   GitGraph,
+  ChevronDown,
 } from "lucide-react";
 import { Progress } from "@/components/ui/progress";
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
+import { Button } from "@/components/ui/button";
 
 const skillsData = [
   { name: "Python", level: 95, icon: <Code className="w-6 h-6" /> },
-  { name: "C# & .NET Core", level: 90, icon: <Code className="w-6 h-6" /> },
-  { name: "Data Visualization", level: 85, icon: <Palette className="w-6 h-6" /> },
-  { name: "Machine learning", level: 85, icon: <BrainCircuit className="w-6 h-6" /> },
+  { name: "AWS", level: 85, icon: <Cloud className="w-6 h-6" /> },
   { name: "Snowflake", level: 80, icon: <Database className="w-6 h-6" /> },
-  { name: "AWS", level: 80, icon: <Cloud className="w-6 h-6" /> },
   { name: "SQL & SQL Server", level: 90, icon: <Database className="w-6 h-6" /> },
+  { name: "Machine Learning", level: 85, icon: <BrainCircuit className="w-6 h-6" /> },
+  { name: "Data Visualization", level: 85, icon: <Palette className="w-6 h-6" /> },
+  { name: "C# & .NET Core", level: 90, icon: <Code className="w-6 h-6" /> },
   { name: "Angular", level: 80, icon: <Component className="w-6 h-6" /> },
+  { name: "Apache Cassandra", level: 75, icon: <Database className="w-6 h-6" /> },
   { name: "FHIR & HL7", level: 75, icon: <TerminalSquare className="w-6 h-6" /> },
   { name: "IoT", level: 70, icon: <Server className="w-6 h-6" /> },
   { name: "Git", level: 90, icon: <GitGraph className="w-6 h-6" /> },
-  { name: "Jira", level: 85, icon: <TerminalSquare className="w-6 h-6" /> },
 ];
 
 const AnimatedSkillBar = ({
@@ -51,6 +53,7 @@ const AnimatedSkillBar = ({
 
 export default function SkillsSection() {
   const [isVisible, setIsVisible] = useState(false);
+  const [showAll, setShowAll] = useState(false);
   const sectionRef = useRef<HTMLDivElement>(null);
 
   useEffect(() => {
@@ -75,6 +78,8 @@ export default function SkillsSection() {
     };
   }, []);
 
+  const displayedSkills = showAll ? skillsData : skillsData.slice(0, 6);
+
   return (
     <section id="skills" ref={sectionRef} className="py-20 md:py-32 bg-background">
       <div className="container mx-auto px-4 md:px-6">
@@ -87,7 +92,7 @@ export default function SkillsSection() {
           </p>
         </div>
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-          {skillsData.map((skill) => (
+          {displayedSkills.map((skill) => (
             <Card
               key={skill.name}
               className="bg-card border border-border/50 hover:border-accent transition-colors"
@@ -107,6 +112,18 @@ export default function SkillsSection() {
             </Card>
           ))}
         </div>
+        {skillsData.length > 6 && (
+          <div className="text-center mt-12">
+            <Button
+              variant="outline"
+              onClick={() => setShowAll(!showAll)}
+              className="group"
+            >
+              {showAll ? "Show Less" : "Show More"}
+              <ChevronDown className={`ml-2 h-4 w-4 transition-transform ${showAll ? 'rotate-180' : ''}`} />
+            </Button>
+          </div>
+        )}
       </div>
     </section>
   );
