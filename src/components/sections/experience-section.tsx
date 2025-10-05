@@ -60,7 +60,7 @@ export default function ExperienceSection() {
                         <p className="text-foreground/80 mb-4">{item.description}</p>
                         <div className="flex flex-wrap gap-2">
                           {item.skills.map((skill, skillIndex) => (
-                            <Badge key={skillIndex} variant="outline" className="bg-gradient-to-r from-background to-secondary text-foreground border-border">
+                            <Badge key={skillIndex} variant="secondary">
                               {skill}
                             </Badge>
                           ))}
