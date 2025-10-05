@@ -4,6 +4,7 @@
 import { Card, CardHeader, CardTitle, CardDescription, CardContent } from "@/components/ui/card";
 import { Briefcase } from "lucide-react";
 import { useSectionInView } from "@/hooks/use-section-in-view";
+import { Badge } from "@/components/ui/badge";
 
 const experienceData = [
   {
@@ -11,18 +12,21 @@ const experienceData = [
     company: "Quanti LLC",
     period: "Jun 2025 – Present",
     description: "Developed and integrated Google AdSense and Meta Ads, designed the backend using Python (FastAPI), and built a responsive frontend with Vue.js. Utilized AWS services for data pipelines and deployed ML models.",
+    skills: ["Python", "FastAPI", "Vue.js", "AWS", "Google AdSense", "Meta Ads"],
   },
   {
     role: "Software Engineer",
     company: "CitiusTech",
     period: "May 2021 – Jun 2023",
     description: "Developed scalable web applications using .NET Core and React. Improved application efficiency by 25%, managed the full SDLC, and deployed applications on Microsoft Azure, reducing deployment time by 25%.",
+    skills: [".NET Core", "React", "Azure", "SQL Server", "CI/CD"],
   },
   {
     role: "Software Intern",
     company: "Tata Strive",
     period: "Sep 2020 – Apr 2021",
     description: "Built a responsive shopping website using HTML, CSS, and JavaScript. Gained experience with Adobe Photoshop and deployed the application on Microsoft Azure.",
+    skills: ["HTML", "CSS", "JavaScript", "Azure", "Adobe Photoshop"],
   },
 ];
 
@@ -53,7 +57,14 @@ export default function ExperienceSection() {
                         <CardDescription>{item.company} &bull; {item.period}</CardDescription>
                       </CardHeader>
                       <CardContent>
-                        <p className="text-foreground/80">{item.description}</p>
+                        <p className="text-foreground/80 mb-4">{item.description}</p>
+                        <div className="flex flex-wrap gap-2">
+                          {item.skills.map((skill, skillIndex) => (
+                            <Badge key={skillIndex} variant="outline" className="bg-gradient-to-r from-background to-secondary text-foreground border-border">
+                              {skill}
+                            </Badge>
+                          ))}
+                        </div>
                       </CardContent>
                     </Card>
                   </div>
