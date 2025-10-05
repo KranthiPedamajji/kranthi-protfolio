@@ -1,5 +1,9 @@
+
+"use client";
+
 import { Card, CardHeader, CardTitle, CardDescription, CardContent } from "@/components/ui/card";
 import { Briefcase } from "lucide-react";
+import { useSectionInView } from "@/hooks/use-section-in-view";
 
 const experienceData = [
   {
@@ -23,8 +27,10 @@ const experienceData = [
 ];
 
 export default function ExperienceSection() {
+  const { ref } = useSectionInView("experience", 0.2);
+
   return (
-    <section id="experience" className="py-20 md:py-32 bg-card">
+    <section ref={ref} id="experience" className="py-20 md:py-32 bg-card section-fade-in">
       <div className="container mx-auto px-4 md:px-6">
         <div className="text-center mb-16">
           <h2 className="text-3xl md:text-4xl font-bold font-headline">Work Experience</h2>

@@ -18,6 +18,7 @@ import { Textarea } from "@/components/ui/textarea";
 import { Card, CardContent, CardHeader, CardTitle, CardDescription } from "@/components/ui/card";
 import { useToast } from "@/hooks/use-toast";
 import { Send, Github } from "lucide-react";
+import { useSectionInView } from "@/hooks/use-section-in-view";
 
 const formSchema = z.object({
   name: z.string().min(2, {
@@ -32,6 +33,7 @@ const formSchema = z.object({
 });
 
 export default function ContactSection() {
+  const { ref } = useSectionInView("contact", 0.5);
   const { toast } = useToast();
 
   const form = useForm<z.infer<typeof formSchema>>({
@@ -53,7 +55,7 @@ export default function ContactSection() {
   }
 
   return (
-    <section id="contact" className="py-20 md:py-32">
+    <section ref={ref} id="contact" className="py-20 md:py-32 section-fade-in">
       <div className="container mx-auto px-4 md:px-6">
         <div className="max-w-2xl mx-auto">
           <Card className="bg-white/5 backdrop-blur-lg border border-white/10 shadow-2xl">

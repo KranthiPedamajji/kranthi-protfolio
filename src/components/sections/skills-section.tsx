@@ -1,8 +1,10 @@
+
 "use client";
 
-import { useState, useEffect, useRef } from "react";
+import { useState, useEffect } from "react";
 import { Progress } from "@/components/ui/progress";
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
+import { useSectionInView } from "@/hooks/use-section-in-view";
 
 const skillsData = {
   Languages: [
@@ -51,33 +53,11 @@ const AnimatedSkillBar = ({
 };
 
 export default function SkillsSection() {
-  const [isVisible, setIsVisible] = useState(false);
-  const sectionRef = useRef<HTMLDivElement>(null);
-
-  useEffect(() => {
-    const observer = new IntersectionObserver(
-      (entries) => {
-        if (entries[0].isIntersecting) {
-          setIsVisible(true);
-          observer.disconnect();
-        }
-      },
-      { threshold: 0.1 }
-    );
-
-    if (sectionRef.current) {
-      observer.observe(sectionRef.current);
-    }
-
-    return () => {
-      if (observer) {
-        observer.disconnect();
-      }
-    };
-  }, []);
+  const { ref, inView } = useSectionInView("skills", 0.1);
+  const isVisible = inView;
 
   return (
-    <section id="skills" ref={sectionRef} className="py-20 md:py-32 bg-background">
+    <section ref={ref} id="skills" className="py-20 md:py-32 bg-background section-fade-in">
       <div className="container mx-auto px-4 md:px-6">
         <div className="text-center mb-16">
           <h2 className="text-3xl md:text-4xl font-bold font-headline">

@@ -1,9 +1,15 @@
+
+"use client";
+
 import { Card, CardContent } from "@/components/ui/card";
 import { User } from "lucide-react";
+import { useSectionInView } from "@/hooks/use-section-in-view";
 
 export default function AboutSection() {
+  const { ref } = useSectionInView("about", 0.5);
+
   return (
-    <section id="about" className="py-20 md:py-32 bg-background/50">
+    <section ref={ref} id="about" className="py-20 md:py-32 bg-background/50 section-fade-in">
       <div className="container mx-auto px-4 md:px-6">
         <div className="text-center mb-16">
           <h2 className="text-3xl md:text-4xl font-bold font-headline">About Me</h2>

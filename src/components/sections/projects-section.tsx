@@ -13,14 +13,16 @@ import {
 import { Button } from "@/components/ui/button";
 import { Github, ExternalLink } from "lucide-react";
 import Autoplay from "embla-carousel-autoplay";
+import { useSectionInView } from "@/hooks/use-section-in-view";
 
 export default function ProjectsSection() {
+  const { ref } = useSectionInView("projects", 0.1);
   const plugin = React.useRef(
     Autoplay({ delay: 3000, stopOnInteraction: true })
   );
 
   return (
-    <section id="projects" className="py-20 md:py-32 bg-background">
+    <section ref={ref} id="projects" className="py-20 md:py-32 bg-background section-fade-in">
       <div className="container mx-auto px-4 md:px-6">
         <div className="text-center mb-16">
           <h2 className="text-3xl md:text-4xl font-bold font-headline">
