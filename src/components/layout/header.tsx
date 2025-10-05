@@ -2,7 +2,7 @@
 
 import * as React from "react";
 import Link from "next/link";
-import { Code2, Menu } from "lucide-react";
+import { Code2, Menu, Download } from "lucide-react";
 
 import { Button } from "@/components/ui/button";
 import { Sheet, SheetContent, SheetTrigger } from "@/components/ui/sheet";
@@ -39,7 +39,7 @@ export default function Header() {
           <Code2 className="h-6 w-6 text-primary" />
           <span className="font-bold text-lg">Kranthi</span>
         </Link>
-        <nav className="hidden md:flex items-center gap-6">
+        <nav className="hidden md:flex items-center gap-4">
           {navLinks.map((link) => (
             <Link
               key={link.href}
@@ -49,8 +49,20 @@ export default function Header() {
               {link.label}
             </Link>
           ))}
+          <Button asChild size="sm" variant="outline">
+            <a href="/Kranthi_Pedamajji_Resume.pdf" download>
+              <Download className="mr-2 h-4 w-4" />
+              Resume
+            </a>
+          </Button>
         </nav>
-        <div className="md:hidden">
+        <div className="md:hidden flex items-center gap-2">
+          <Button asChild size="icon" variant="ghost">
+            <a href="/Kranthi_Pedamajji_Resume.pdf" download>
+              <Download className="h-5 w-5" />
+               <span className="sr-only">Download Resume</span>
+            </a>
+          </Button>
           <Sheet>
             <SheetTrigger asChild>
               <Button variant="ghost" size="icon">

@@ -5,7 +5,7 @@ import { Button } from "@/components/ui/button";
 import Typewriter from "@/components/typewriter";
 import Link from "next/link";
 import { useSectionInView } from "@/hooks/use-section-in-view";
-import { Github, Linkedin, Mail, Phone } from "lucide-react";
+import { Github, Linkedin, Mail, Phone, Download } from "lucide-react";
 
 export default function HeroSection() {
   const { ref } = useSectionInView("home", 0.5);
@@ -33,11 +33,17 @@ export default function HeroSection() {
         <p className="max-w-3xl mx-auto mb-12 text-foreground/70">
           Versatile Full Stack & Data Engineer with 3+ years of experience building scalable web applications and end-to-end data solutions. Proficient in Python, JavaScript, .NET, and SQL for both application development and data workflows.
         </p>
-        <div className="flex gap-4 justify-center">
+        <div className="flex flex-wrap gap-4 justify-center">
           <Button asChild size="lg">
             <Link href="#projects">View My Work</Link>
           </Button>
           <Button asChild size="lg" variant="outline">
+            <a href="/Kranthi_Pedamajji_Resume.pdf" download>
+              <Download className="mr-2 h-4 w-4" />
+              Download Resume
+            </a>
+          </Button>
+          <Button asChild size="lg" variant="secondary">
             <Link href="#contact">Contact Me</Link>
           </Button>
         </div>
