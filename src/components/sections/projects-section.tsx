@@ -31,38 +31,48 @@ export default function ProjectsSection() {
       return;
     }
     const slides = api.slideNodes();
-    slides.forEach((slide, index) => {
+    slides.forEach((slide) => {
       slide.classList.remove("is-active");
     });
-    const inView = api.slidesInView();
-    if(inView.length > 0){
-        const activeSlideIndex = inView[0];
-        if(slides[activeSlideIndex]){
-            slides[activeSlideIndex].classList.add("is-active");
-        }
+    
+    const inViewIndexes = api.slidesInView();
+    // Embla's `slidesInView` can return multiple slides, especially with `loop`.
+    // The "active" one for centering purposes is often the first one in the array.
+    if (inViewIndexes.length > 0) {
+      const activeSlideNode = slides[inViewIndexes[0]];
+      if (activeSlideNode) {
+        activeSlideNode.classList.add("is-active");
+      }
     }
-
   }, [api]);
+
 
   useEffect(() => {
     if (!api) {
       return;
     }
-    setCurrent(api.selectedScrollSnap());
-    updateCarouselClasses();
-
-    api.on("select", () => {
+    
+    const handleSelect = () => {
       setCurrent(api.selectedScrollSnap());
       updateCarouselClasses();
-    });
+    };
 
-    api.on("scroll", () => {
+    const handleScroll = () => {
       updateCarouselClasses();
-    });
+    };
+
+    api.on("select", handleSelect);
+    api.on("scroll", handleScroll);
+    api.on("reInit", updateCarouselClasses);
     
-    api.on("reInit", updateCarouselClasses)
+    // Initial setup
+    handleSelect();
 
-
+    return () => {
+      api.off("select", handleSelect);
+      api.off("scroll", handleScroll);
+      api.off("reInit", updateCarouselClasses);
+    };
   }, [api, updateCarouselClasses]);
 
   return (
@@ -85,13 +95,13 @@ export default function ProjectsSection() {
             align: "center",
             loop: true,
           }}
-          className="w-full max-w-2xl mx-auto"
+          className="w-full max-w-4xl mx-auto"
         >
-          <CarouselContent>
+          <CarouselContent className="-ml-4">
             {PlaceHolderImages.map((project, index) => (
-              <CarouselItem key={index} className="carousel-item">
+              <CarouselItem key={index} className="carousel-item md:basis-1/2 lg:basis-1/3">
                 <div className="p-1 h-full">
-                  <Card className="overflow-hidden group h-full flex flex-col transition-all duration-300 hover:border-primary hover:shadow-2xl">
+                  <Card className="overflow-hidden group h-full flex flex-col transition-all duration-300 hover:border-primary">
                     <CardHeader>
                       <CardTitle>{project.title}</CardTitle>
                       <CardDescription className="line-clamp-4 h-[96px]">

@@ -89,7 +89,7 @@
   }
   
   .carousel-item {
-    transform: scale(0.9);
+    transform: scale(0.85);
     opacity: 0.5;
     filter: blur(4px);
     transition: transform 0.5s ease-out, opacity 0.5s ease-out, filter 0.5s ease-out;
