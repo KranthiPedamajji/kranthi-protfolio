@@ -39,17 +39,18 @@ export default function Header() {
           <Code2 className="h-6 w-6 text-primary" />
           <span className="font-bold text-lg">Kranthi</span>
         </Link>
-        <nav className="hidden md:flex items-center gap-6">
+        <nav className="hidden md:flex items-center gap-6 text-sm">
+          <div className="flex-grow"></div>
           {navLinks.map((link) => (
             <Link
               key={link.href}
               href={link.href}
-              className="text-sm font-medium text-foreground/80 transition-colors hover:text-foreground"
+              className="font-medium text-foreground/80 transition-colors hover:text-foreground"
             >
               {link.label}
             </Link>
           ))}
-          <Button asChild size="sm" variant="outline">
+           <Button asChild size="sm" variant="outline">
             <a href="/Kranthi_Pedamajji_Resume.pdf" download>
               <Download className="mr-2 h-4 w-4" />
               Resume
