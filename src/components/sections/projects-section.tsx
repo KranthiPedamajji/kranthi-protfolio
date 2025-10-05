@@ -79,8 +79,6 @@ export default function ProjectsSection() {
         <Carousel
           setApi={setApi}
           plugins={[plugin.current]}
-          onMouseEnter={plugin.current.stop}
-          onMouseLeave={plugin.current.reset}
           opts={{
             align: "center",
             loop: true,
