@@ -31,7 +31,7 @@ export default function HeroSection() {
           <Typewriter texts={skills} />
         </div>
         <p className="max-w-3xl mx-auto mb-12 text-foreground/70">
-          Versatile Full Stack & Data Engineer with 2+ years of experience building scalable web applications and end-to-end data solutions. Proficient in Python, JavaScript, .NET, and SQL for both application development and data workflows.
+          Versatile Full Stack & Data Engineer with 3+ years of experience building scalable web applications and end-to-end data solutions. Proficient in Python, JavaScript, .NET, and SQL for both application development and data workflows.
         </p>
         <div className="flex gap-4 justify-center">
           <Button asChild size="lg">
