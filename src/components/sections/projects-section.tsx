@@ -1,7 +1,7 @@
+
 "use client";
 
 import React, { useCallback, useEffect, useState, useRef } from "react";
-import { PlaceHolderImages } from "@/lib/placeholder-images";
 import { Card, CardHeader, CardTitle, CardDescription } from "@/components/ui/card";
 import {
   Carousel,
@@ -15,7 +15,9 @@ import { Button } from "@/components/ui/button";
 import { Github, ExternalLink } from "lucide-react";
 import Autoplay from "embla-carousel-autoplay";
 import { useSectionInView } from "@/hooks/use-section-in-view";
-import { cn } from "@/lib/utils";
+import { portfolioData } from "@/lib/portfolio-data";
+
+const { projects: projectsData } = portfolioData;
 
 export default function ProjectsSection() {
   const { ref } = useSectionInView("projects", 0.1);
@@ -70,10 +72,10 @@ export default function ProjectsSection() {
       <div className="container mx-auto px-4 md:px-6">
         <div className="text-center mb-16">
           <h2 className="text-3xl md:text-4xl font-bold font-headline">
-            Featured Projects
+            {projectsData.title}
           </h2>
           <p className="text-lg text-foreground/70 mt-2">
-            A selection of my recent work.
+            {projectsData.subtitle}
           </p>
         </div>
         <Carousel
@@ -86,7 +88,7 @@ export default function ProjectsSection() {
           className="w-full max-w-5xl mx-auto"
         >
           <CarouselContent className="-ml-8">
-            {PlaceHolderImages.map((project, index) => (
+            {projectsData.items.map((project, index) => (
               <CarouselItem key={index} className="carousel-item md:basis-1/2 lg:basis-1/3 pl-8">
                 <div className="p-1 h-full">
                   <Card className="overflow-hidden group h-full flex flex-col transition-all duration-500 ease-in-out">

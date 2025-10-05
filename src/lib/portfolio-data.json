@@ -1,0 +1,175 @@
+
+{
+  "name": "Kranthi",
+  "resumeUrl": "/Kranthi_Pedamajji_Resume.pdf",
+  "navLinks": [
+    { "href": "#home", "label": "Home" },
+    { "href": "#about", "label": "About" },
+    { "href": "#skills", "label": "Skills" },
+    { "href": "#experience", "label": "Experience" },
+    { "href": "#projects", "label": "Projects" },
+    { "href": "#education", "label": "Education" },
+    { "href": "#contact", "label": "Contact" }
+  ],
+  "hero": {
+    "title": "Kranthi's Kinetic Portfolio",
+    "skills": [
+      "Full Stack Developer.",
+      "Data Engineer.",
+      "Machine Learning Practitioner.",
+      "Cloud Specialist."
+    ],
+    "description": "Versatile Full Stack & Data Engineer with 3+ years of experience building scalable web applications and end-to-end data solutions. Proficient in Python, JavaScript, .NET, and SQL for both application development and data workflows.",
+    "cta": {
+      "projects": "View My Work",
+      "resume": "Download Resume",
+      "contact": "Contact Me"
+    }
+  },
+  "about": {
+    "title": "About Me",
+    "paragraphs": [
+      "I’m Kranthi Pedamajji, a Python Full Stack Developer and Data Engineer with over 3 years of experience building scalable, cloud-based applications and data solutions. I specialize in Python (FastAPI), C# (.NET Core), Vue.js, React, and SQL/NoSQL databases like PostgreSQL and MongoDB.",
+      "At Quanti LLC, I work on backend systems, cloud deployments on AWS, and integrations with Google AdSense and Meta Ads APIs. My background also includes data pipelines, CI/CD automation, and visual analytics using Tableau and Power BI.",
+      "With a Master’s in Data Science from Rowan University, I bring hands-on experience in machine learning, NLP, and big data technologies. I’m passionate about designing clean, efficient, and intelligent systems that bridge data, cloud, and AI to deliver real-world impact."
+    ]
+  },
+  "skills": {
+    "title": "Skills & Expertise",
+    "categories": {
+      "Languages": [
+        { "name": "Python", "level": 95 },
+        { "name": "JavaScript", "level": 90 },
+        { "name": "C#", "level": 85 },
+        { "name": "SQL", "level": 88 }
+      ],
+      "Frameworks": [
+        { "name": "FastAPI", "level": 92 },
+        { "name": "React", "level": 88 },
+        { "name": "Vue.js", "level": 85 },
+        { "name": ".NET Core", "level": 82 }
+      ],
+      "Cloud & DevOps": [
+        { "name": "AWS", "level": 90 },
+        { "name": "Azure", "level": 85 },
+        { "name": "GCP", "level": 80 },
+        { "name": "CI/CD", "level": 88 }
+      ],
+      "Data & Analytics": [
+        { "name": "Snowflake", "level": 90 },
+        { "name": "Tableau", "level": 88 },
+        { "name": "Machine Learning", "level": 85 },
+        { "name": "ETL Pipelines", "level": 92 }
+      ]
+    }
+  },
+  "experience": {
+    "title": "Work Experience",
+    "subtitle": "My professional journey.",
+    "jobs": [
+      {
+        "role": "Intern Software Engineer",
+        "company": "Quanti LLC",
+        "period": "Jun 2025 – Present",
+        "description": "Developed and integrated Google AdSense and Meta Ads, designed the backend using Python (FastAPI), and built a responsive frontend with Vue.js. Utilized AWS services for data pipelines and deployed ML models.",
+        "skills": ["Python", "FastAPI", "Vue.js", "AWS", "Google AdSense", "Meta Ads"]
+      },
+      {
+        "role": "Software Engineer",
+        "company": "CitiusTech",
+        "period": "May 2021 – Jun 2023",
+        "description": "Developed scalable web applications using .NET Core and React. Improved application efficiency by 25%, managed the full SDLC, and deployed applications on Microsoft Azure, reducing deployment time by 25%.",
+        "skills": [".NET Core", "React", "Azure", "SQL Server", "CI/CD"]
+      },
+      {
+        "role": "Software Intern",
+        "company": "Tata Strive",
+        "period": "Sep 2020 – Apr 2021",
+        "description": "Built a responsive shopping website using HTML, CSS, and JavaScript. Gained experience with Adobe Photoshop and deployed the application on Microsoft Azure.",
+        "skills": ["HTML", "CSS", "JavaScript", "Azure", "Adobe Photoshop"]
+      }
+    ]
+  },
+  "projects": {
+    "title": "Featured Projects",
+    "subtitle": "A selection of my recent work.",
+    "items": [
+      {
+        "id": "project-1",
+        "title": "Predictive Analysis of NFL Running Backs",
+        "description": "Conducted a predictive analysis of NFL running backs’ performance using historical data, focusing on key metrics. Developed and deployed machine learning models, including Random Forest and Gradient Boosting, achieving 15% higher prediction accuracy.",
+        "technologies": "Altair AI, RapidMiner, Tableau, Python",
+        "githubUrl": "https://github.com"
+      },
+      {
+        "id": "project-2",
+        "title": "Claims Management System",
+        "description": "Designed and developed a full-stack claims management system to streamline healthcare workflows. Built a secure backend using .NET Core and SQL Server, with a responsive Angular frontend. Deployed on GCP.",
+        "technologies": ".NET Core, SQL Server, Angular, GCP, RESTful APIs, Git",
+        "githubUrl": "https://github.com"
+      },
+      {
+        "id": "project-3",
+        "title": "Big Data Analytics Project",
+        "description": "Designed and implemented a Big Data processing solution using Apache Cassandra to manage and query large volumes of distributed data efficiently. Focused on scalability and high availability.",
+        "technologies": "Apache Cassandra, NoSQL, Data Modeling, Tableau, Python",
+        "githubUrl": "https://github.com"
+      },
+      {
+        "id": "project-4",
+        "title": "RFM Model based clustering analysis",
+        "description": "Applied the RFM (Recency, Frequency, Monetary) model to segment customers into meaningful clusters using K-Means clustering, leading to 20% improved marketing personalization and customer retention.",
+        "technologies": "Python, Pandas, Altair AI, RapidMiner, Tableau",
+        "githubUrl": "https://github.com"
+      },
+      {
+        "id": "project-5",
+        "title": "Cloud-Based Data Warehouse using Snowflake",
+        "description": "Designed and implemented a scalable cloud-based data warehouse solution for a healthcare client using Snowflake. Automated ETL pipelines using Azure Data Factory.",
+        "technologies": "Snowflake, SQL, AWS, Python, Tableau, ETL tools",
+        "githubUrl": "https://github.com"
+      },
+      {
+        "id": "project-6",
+        "title": "Symptom Analysis for Monkeypox Diagnosis",
+        "description": "Analyzed patient health data to identify key symptoms of monkeypox outbreaks. Applied machine learning models to improve diagnostic accuracy by 25%.",
+        "technologies": "Python, RapidMiner, Tableau, Decision Trees, Logistic Regression",
+        "githubUrl": "https://github.com"
+      }
+    ]
+  },
+  "education": {
+    "title": "Education",
+    "subtitle": "My academic background.",
+    "degrees": [
+      {
+        "degree": "Master’s in Data Science",
+        "university": "Rowan University",
+        "period": "Aug 2023 – Present",
+        "location": "Glassboro, NJ",
+        "gpa": "3.3"
+      },
+      {
+        "degree": "Bachelor of Technology in Computer Science and Technology",
+        "university": "Bharath University",
+        "period": "Jun 2017 – May 2021",
+        "location": "Chennai, India",
+        "gpa": "3.5"
+      }
+    ]
+  },
+  "contact": {
+    "title": "Get In Touch",
+    "description": "Have a project in mind or just want to say hi? Reach out via email, phone, or connect with me on social media.",
+    "email": "KranthiPedamajji3@gmail.com",
+    "phone": "+18565267280",
+    "linkedin": "https://www.linkedin.com/in/kranthi-pedamajji-34a10719b/",
+    "github": "https://github.com/KranthiPedamajji",
+    "buttons": {
+        "email": "Email Me",
+        "phone": "Call Me",
+        "linkedin": "LinkedIn",
+        "github": "GitHub"
+    }
+  }
+}

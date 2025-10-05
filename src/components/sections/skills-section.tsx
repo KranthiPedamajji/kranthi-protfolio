@@ -5,33 +5,9 @@ import { useState, useEffect } from "react";
 import { Progress } from "@/components/ui/progress";
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { useSectionInView } from "@/hooks/use-section-in-view";
+import { portfolioData } from "@/lib/portfolio-data";
 
-const skillsData = {
-  Languages: [
-    { name: "Python", level: 95 },
-    { name: "JavaScript", level: 90 },
-    { name: "C#", level: 85 },
-    { name: "SQL", level: 88 },
-  ],
-  Frameworks: [
-    { name: "FastAPI", level: 92 },
-    { name: "React", level: 88 },
-    { name: "Vue.js", level: 85 },
-    { name: ".NET Core", level: 82 },
-  ],
-  "Cloud & DevOps": [
-    { name: "AWS", level: 90 },
-    { name: "Azure", level: 85 },
-    { name: "GCP", level: 80 },
-    { name: "CI/CD", level: 88 },
-  ],
-  "Data & Analytics": [
-    { name: "Snowflake", level: 90 },
-    { name: "Tableau", level: 88 },
-    { name: "Machine Learning", level: 85 },
-    { name: "ETL Pipelines", level: 92 },
-  ],
-};
+const { skills: skillsData } = portfolioData;
 
 const AnimatedSkillBar = ({
   level,
@@ -61,12 +37,12 @@ export default function SkillsSection() {
       <div className="container mx-auto px-4 md:px-6">
         <div className="text-center mb-16">
           <h2 className="text-3xl md:text-4xl font-bold font-headline">
-            Skills & Expertise
+            {skillsData.title}
           </h2>
           <div className="mt-2 h-1 w-24 bg-gradient-to-r from-foreground to-muted-foreground mx-auto"></div>
         </div>
         <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
-          {Object.entries(skillsData).map(([category, skills]) => (
+          {Object.entries(skillsData.categories).map(([category, skills]) => (
             <Card
               key={category}
               className="bg-white/5 backdrop-blur-lg border border-white/10 shadow-lg group transition-transform duration-300 ease-in-out hover:scale-105 hover:shadow-2xl"

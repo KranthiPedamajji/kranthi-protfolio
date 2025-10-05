@@ -5,6 +5,9 @@ import { Button } from "@/components/ui/button";
 import { Card, CardContent, CardHeader, CardTitle, CardDescription } from "@/components/ui/card";
 import { Github, Linkedin, Mail, Phone } from "lucide-react";
 import { useSectionInView } from "@/hooks/use-section-in-view";
+import { portfolioData } from "@/lib/portfolio-data";
+
+const { contact } = portfolioData;
 
 export default function ContactSection() {
   const { ref } = useSectionInView("contact", 0.5);
@@ -16,32 +19,32 @@ export default function ContactSection() {
           <Card className="bg-white/5 backdrop-blur-lg border border-white/10 shadow-2xl">
             <CardHeader className="text-center">
               <CardTitle className="text-3xl md:text-4xl font-bold font-headline">
-                Get In Touch
+                {contact.title}
               </CardTitle>
               <CardDescription className="text-lg text-foreground/70 mt-2">
-                Have a project in mind or just want to say hi? Reach out via email, phone, or connect with me on social media.
+                {contact.description}
               </CardDescription>
             </CardHeader>
             <CardContent>
                 <div className="flex flex-wrap justify-center gap-4">
                     <Button variant="outline" asChild size="lg">
-                        <a href="mailto:KranthiPedamajji3@gmail.com">
-                            <Mail className="mr-2 h-4 w-4" /> Email Me
+                        <a href={`mailto:${contact.email}`}>
+                            <Mail className="mr-2 h-4 w-4" /> {contact.buttons.email}
                         </a>
                     </Button>
                      <Button variant="outline" asChild size="lg">
-                        <a href="tel:+18565267280">
-                            <Phone className="mr-2 h-4 w-4" /> Call Me
+                        <a href={`tel:${contact.phone}`}>
+                            <Phone className="mr-2 h-4 w-4" /> {contact.buttons.phone}
                         </a>
                     </Button>
                     <Button variant="outline" asChild size="lg">
-                        <a href="https://www.linkedin.com/in/kranthi-pedamajji-34a10719b/" target="_blank" rel="noopener noreferrer">
-                            <Linkedin className="mr-2 h-4 w-4" /> LinkedIn
+                        <a href={contact.linkedin} target="_blank" rel="noopener noreferrer">
+                            <Linkedin className="mr-2 h-4 w-4" /> {contact.buttons.linkedin}
                         </a>
                     </Button>
                     <Button variant="outline" asChild size="lg">
-                        <a href="https://github.com/KranthiPedamajji" target="_blank" rel="noopener noreferrer">
-                            <Github className="mr-2 h-4 w-4" /> GitHub
+                        <a href={contact.github} target="_blank" rel="noopener noreferrer">
+                            <Github className="mr-2 h-4 w-4" /> {contact.buttons.github}
                         </a>
                     </Button>
                 </div>

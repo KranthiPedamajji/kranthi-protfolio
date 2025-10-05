@@ -1,3 +1,4 @@
+
 "use client";
 
 import * as React from "react";
@@ -6,16 +7,9 @@ import { Code2, Menu, Download } from "lucide-react";
 
 import { Button } from "@/components/ui/button";
 import { Sheet, SheetContent, SheetTrigger } from "@/components/ui/sheet";
+import { portfolioData } from "@/lib/portfolio-data";
 
-const navLinks = [
-  { href: "#home", label: "Home" },
-  { href: "#about", label: "About" },
-  { href: "#skills", label: "Skills" },
-  { href: "#experience", label: "Experience" },
-  { href: "#projects", label: "Projects" },
-  { href: "#education", label: "Education" },
-  { href: "#contact", label: "Contact" },
-];
+const { name, resumeUrl, navLinks } = portfolioData;
 
 export default function Header() {
   const [isScrolled, setIsScrolled] = React.useState(false);
@@ -37,7 +31,7 @@ export default function Header() {
       <div className="container mx-auto flex h-16 items-center justify-between px-4 md:px-6">
         <Link href="#home" className="flex items-center gap-2" aria-label="Homepage">
           <Code2 className="h-6 w-6 text-primary" />
-          <span className="font-bold text-lg">Kranthi</span>
+          <span className="font-bold text-lg">{name}</span>
         </Link>
         <nav className="hidden md:flex items-center gap-6 text-sm">
           <div className="flex-grow"></div>
@@ -51,7 +45,7 @@ export default function Header() {
             </Link>
           ))}
            <Button asChild size="sm" variant="outline">
-            <a href="/Kranthi_Pedamajji_Resume.pdf" download>
+            <a href={resumeUrl} download>
               <Download className="mr-2 h-4 w-4" />
               Resume
             </a>
@@ -59,7 +53,7 @@ export default function Header() {
         </nav>
         <div className="md:hidden flex items-center gap-2">
           <Button asChild size="icon" variant="ghost">
-            <a href="/Kranthi_Pedamajji_Resume.pdf" download>
+            <a href={resumeUrl} download>
               <Download className="h-5 w-5" />
                <span className="sr-only">Download Resume</span>
             </a>

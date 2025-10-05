@@ -1,9 +1,11 @@
+
 import type { Metadata } from "next";
 import { Toaster } from "@/components/ui/toaster";
+import { portfolioData } from "@/lib/portfolio-data";
 import "./globals.css";
 
 export const metadata: Metadata = {
-  title: "Kranthi's Kinetic Portfolio",
+  title: portfolioData.hero.title,
   description: "A dynamic portfolio showcasing skills and projects.",
 };
 
