@@ -20,36 +20,34 @@ export default function ProjectsSection() {
             align: "start",
             loop: true,
           }}
-          className="w-full max-w-4xl mx-auto"
+          className="w-full max-w-6xl mx-auto"
         >
           <CarouselContent>
             {PlaceHolderImages.map((project, index) => (
               <CarouselItem key={index} className="md:basis-1/2 lg:basis-1/3">
-                <div className="p-1">
+                <div className="p-1 h-full">
                   <Card className="overflow-hidden group h-full flex flex-col">
-                    <CardContent className="p-0 relative">
-                      <Image
-                        src={project.imageUrl}
-                        alt={`Project ${index + 1}`}
-                        width={600}
-                        height={400}
-                        className="object-cover transition-transform duration-300 group-hover:scale-105"
-                        data-ai-hint={project.imageHint}
-                      />
-                      <div className="absolute inset-0 bg-black/20 group-hover:bg-black/40 transition-colors"></div>
-                    </CardContent>
                     <CardHeader>
-                      <CardTitle>Project {index + 1}</CardTitle>
-                      <CardDescription>{project.description}</CardDescription>
+                      <CardTitle>{project.title}</CardTitle>
+                      <CardDescription className="h-24 overflow-y-auto">{project.description}</CardDescription>
                     </CardHeader>
+                    <div className="p-4 pt-0">
+                      <p className="text-sm text-foreground/60"><b>Technologies:</b> {project.technologies}</p>
+                    </div>
                     <div className="flex-grow"></div>
                     <div className="p-4 pt-0 flex gap-2">
-                      <Button variant="outline" size="sm">
-                        <Github className="mr-2 h-4 w-4" /> Code
+                      <Button variant="outline" size="sm" asChild>
+                        <a href={project.githubUrl} target="_blank" rel="noopener noreferrer">
+                          <Github className="mr-2 h-4 w-4" /> Code
+                        </a>
                       </Button>
-                      <Button variant="secondary" size="sm">
-                        <ExternalLink className="mr-2 h-4 w-4" /> Live Demo
-                      </Button>
+                      {project.liveUrl && (
+                        <Button variant="secondary" size="sm" asChild>
+                           <a href={project.liveUrl} target="_blank" rel="noopener noreferrer">
+                            <ExternalLink className="mr-2 h-4 w-4" /> Live Demo
+                           </a>
+                        </Button>
+                      )}
                     </div>
                   </Card>
                 </div>

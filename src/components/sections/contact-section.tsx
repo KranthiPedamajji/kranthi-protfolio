@@ -17,7 +17,7 @@ import { Input } from "@/components/ui/input";
 import { Textarea } from "@/components/ui/textarea";
 import { Card, CardContent, CardHeader, CardTitle, CardDescription } from "@/components/ui/card";
 import { useToast } from "@/hooks/use-toast";
-import { Send } from "lucide-react";
+import { Send, Github } from "lucide-react";
 
 const formSchema = z.object({
   name: z.string().min(2, {
@@ -116,6 +116,13 @@ export default function ContactSection() {
                   </Button>
                 </form>
               </Form>
+                <div className="text-center mt-8">
+                    <Button variant="outline" asChild>
+                        <a href="https://github.com" target="_blank" rel="noopener noreferrer">
+                            <Github className="mr-2 h-4 w-4" /> View my GitHub
+                        </a>
+                    </Button>
+                </div>
             </CardContent>
           </Card>
         </div>

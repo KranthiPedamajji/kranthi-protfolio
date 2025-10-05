@@ -3,22 +3,22 @@ import { Briefcase } from "lucide-react";
 
 const experienceData = [
   {
-    role: "Senior Full-Stack Engineer",
-    company: "Tech Solutions Inc.",
-    period: "2020 - Present",
-    description: "Led development of core features for a major SaaS platform, mentored junior developers, and improved system performance by 30%.",
+    role: "Intern Software Engineer",
+    company: "Quanti LLC",
+    period: "Jun 2025 – Present",
+    description: "Developed and integrated Google AdSense and Meta Ads, designed the backend using Python (FastAPI), and built a responsive frontend with Vue.js. Utilized AWS services for data pipelines and deployed ML models.",
   },
   {
-    role: "Mid-Level Software Developer",
-    company: "Innovate Co.",
-    period: "2018 - 2020",
-    description: "Developed and maintained client-side applications using React and Redux. Collaborated with designers to create responsive and accessible UIs.",
+    role: "Software Engineer",
+    company: "CitiusTech",
+    period: "May 2021 – Jun 2023",
+    description: "Developed scalable web applications using .NET Core and React. Improved application efficiency by 25%, managed the full SDLC, and deployed applications on Microsoft Azure, reducing deployment time by 25%.",
   },
   {
-    role: "Junior Developer",
-    company: "Digital Starters",
-    period: "2016 - 2018",
-    description: "Assisted in building and testing web applications. Gained foundational experience in full-stack development and agile methodologies.",
+    role: "Software Intern",
+    company: "Tata Strive",
+    period: "Sep 2020 – Apr 2021",
+    description: "Built a responsive shopping website using HTML, CSS, and JavaScript. Gained experience with Adobe Photoshop and deployed the application on Microsoft Azure.",
   },
 ];
 
@@ -30,28 +30,31 @@ export default function ExperienceSection() {
           <h2 className="text-3xl md:text-4xl font-bold font-headline">Work Experience</h2>
           <p className="text-lg text-foreground/70 mt-2">My professional journey.</p>
         </div>
-        <div className="relative">
+        <div className="relative max-w-5xl mx-auto">
           {/* Timeline Line */}
-          <div className="absolute left-1/2 top-0 bottom-0 w-0.5 bg-border -translate-x-1/2"></div>
+          <div className="absolute left-1/2 top-0 bottom-0 w-0.5 bg-border -translate-x-1/2 hidden md:block"></div>
           
-          {experienceData.map((item, index) => (
-            <div key={index} className="mb-12 flex justify-center items-center w-full">
-              <div className={`w-full flex ${index % 2 === 0 ? 'justify-start' : 'justify-end'}`}>
-                <div className="w-1/2 px-4 group">
-                  <Card className={`relative transition-transform duration-300 ease-in-out hover:scale-105 hover:shadow-2xl ${index % 2 === 0 ? 'text-left' : 'text-right'}`}>
-                    <div className={`absolute top-1/2 -translate-y-1/2 w-4 h-4 rounded-full bg-primary border-4 border-background ${index % 2 === 0 ? '-right-2 translate-x-1/2' : '-left-2 -translate-x-1/2'}`}></div>
-                    <CardHeader>
-                      <CardTitle className="text-xl">{item.role}</CardTitle>
-                      <CardDescription>{item.company} &bull; {item.period}</CardDescription>
-                    </CardHeader>
-                    <CardContent>
-                      <p className="text-foreground/80">{item.description}</p>
-                    </CardContent>
-                  </Card>
+          <div className="md:space-y-12 space-y-8">
+            {experienceData.map((item, index) => (
+              <div key={index} className="relative">
+                <div className="md:absolute top-1/2 -translate-y-1/2 w-4 h-4 rounded-full bg-primary border-4 border-background hidden md:block" style={{ left: '50%', transform: 'translateX(-50%) translateY(-50%)' }}></div>
+                <div className={`flex flex-col md:flex-row items-center ${index % 2 === 0 ? 'md:flex-row-reverse' : ''}`}>
+                  <div className="w-full md:w-5/12"></div>
+                  <div className="w-full md:w-7/12">
+                    <Card className={`group transition-transform duration-300 ease-in-out hover:scale-105 hover:shadow-2xl`}>
+                      <CardHeader>
+                        <CardTitle className="text-xl">{item.role}</CardTitle>
+                        <CardDescription>{item.company} &bull; {item.period}</CardDescription>
+                      </CardHeader>
+                      <CardContent>
+                        <p className="text-foreground/80">{item.description}</p>
+                      </CardContent>
+                    </Card>
+                  </div>
                 </div>
               </div>
-            </div>
-          ))}
+            ))}
+          </div>
         </div>
       </div>
     </section>

@@ -4,10 +4,10 @@ import Link from "next/link";
 
 export default function HeroSection() {
   const skills = [
-    "Full-Stack Developer.",
-    "UI/UX Enthusiast.",
-    "Creative Coder.",
-    "Problem Solver.",
+    "Full Stack Developer.",
+    "Data Engineer.",
+    "Machine Learning Practitioner.",
+    "Cloud Specialist.",
   ];
 
   return (
@@ -24,8 +24,7 @@ export default function HeroSection() {
           <Typewriter texts={skills} />
         </div>
         <p className="max-w-3xl mx-auto mb-12 text-foreground/70">
-          Welcome to my digital space. I build beautiful, functional, and
-          user-centric web experiences. Explore my work and get in touch.
+          Versatile Full Stack & Data Engineer with 2+ years of experience building scalable web applications and end-to-end data solutions. Proficient in Python, JavaScript, .NET, and SQL for both application development and data workflows.
         </p>
         <div className="flex gap-4 justify-center">
           <Button asChild size="lg">

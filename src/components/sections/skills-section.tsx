@@ -8,42 +8,26 @@ import {
   Palette,
   Server,
   TerminalSquare,
-  Component
+  Component,
+  BrainCircuit,
+  GitGraph,
 } from "lucide-react";
 import { Progress } from "@/components/ui/progress";
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 
 const skillsData = [
-  {
-    name: "React & Next.js",
-    level: 95,
-    icon: <Component className="w-6 h-6" />,
-  },
-  {
-    name: "Node.js & Express",
-    level: 90,
-    icon: <Server className="w-6 h-6" />,
-  },
-  {
-    name: "TypeScript",
-    level: 90,
-    icon: <Code className="w-6 h-6" />,
-  },
-  {
-    name: "Databases (SQL/NoSQL)",
-    level: 85,
-    icon: <Database className="w-6 h-6" />,
-  },
-  {
-    name: "UI/UX Design",
-    level: 80,
-    icon: <Palette className="w-6 h-6" />,
-  },
-  {
-    name: "DevOps & Cloud",
-    level: 75,
-    icon: <Cloud className="w-6 h-6" />,
-  },
+  { name: "Python", level: 95, icon: <Code className="w-6 h-6" /> },
+  { name: "C# & .NET Core", level: 90, icon: <Code className="w-6 h-6" /> },
+  { name: "Data Visualization", level: 85, icon: <Palette className="w-6 h-6" /> },
+  { name: "Machine learning", level: 85, icon: <BrainCircuit className="w-6 h-6" /> },
+  { name: "Snowflake", level: 80, icon: <Database className="w-6 h-6" /> },
+  { name: "AWS", level: 80, icon: <Cloud className="w-6 h-6" /> },
+  { name: "SQL & SQL Server", level: 90, icon: <Database className="w-6 h-6" /> },
+  { name: "Angular", level: 80, icon: <Component className="w-6 h-6" /> },
+  { name: "FHIR & HL7", level: 75, icon: <TerminalSquare className="w-6 h-6" /> },
+  { name: "IoT", level: 70, icon: <Server className="w-6 h-6" /> },
+  { name: "Git", level: 90, icon: <GitGraph className="w-6 h-6" /> },
+  { name: "Jira", level: 85, icon: <TerminalSquare className="w-6 h-6" /> },
 ];
 
 const AnimatedSkillBar = ({
@@ -77,7 +61,7 @@ export default function SkillsSection() {
           observer.disconnect();
         }
       },
-      { threshold: 0.2 }
+      { threshold: 0.1 }
     );
 
     if (sectionRef.current) {

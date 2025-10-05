@@ -1,28 +1,46 @@
 {
-  "placeholderImages": [
+  "projects": [
     {
       "id": "project-1",
-      "description": "A modern e-commerce platform with a focus on user experience.",
-      "imageUrl": "https://images.unsplash.com/photo-1467232004584-a241de8bcf5d?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHwxfHx3ZWIlMjBkZXNpZ258ZW58MHx8fHwxNzU5NjA4NTY3fDA&ixlib=rb-4.1.0&q=80&w=1080",
-      "imageHint": "web design"
+      "title": "Predictive Analysis of NFL Running Backs",
+      "description": "Conducted a predictive analysis of NFL running backs’ performance using historical data, focusing on key metrics. Developed and deployed machine learning models, including Random Forest and Gradient Boosting, achieving 15% higher prediction accuracy.",
+      "technologies": "Altair AI, RapidMiner, Tableau, Python",
+      "githubUrl": "https://github.com"
     },
     {
       "id": "project-2",
-      "description": "Data visualization dashboard for real-time analytics.",
-      "imageUrl": "https://images.unsplash.com/photo-1610913721979-b20ede600e63?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHw1fHxkYXNoYm9hcmQlMjBhbmFseXRpY3N8ZW58MHx8fHwxNzU5NjA4MDI3fDA&ixlib=rb-4.1.0&q=80&w=1080",
-      "imageHint": "dashboard analytics"
+      "title": "Claims Management System",
+      "description": "Designed and developed a full-stack claims management system to streamline healthcare workflows. Built a secure backend using .NET Core and SQL Server, with a responsive Angular frontend. Deployed on GCP.",
+      "technologies": ".NET Core, SQL Server, Angular, GCP, RESTful APIs, Git",
+      "githubUrl": "https://github.com"
     },
     {
       "id": "project-3",
-      "description": "A mobile application for social networking and event planning.",
-      "imageUrl": "https://images.unsplash.com/photo-1523206489230-c012c64b2b48?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHw4fHxtb2JpbGUlMjBhcHB8ZW58MHx8fHwxNzU5NTg0NTMxfDA&ixlib=rb-4.1.0&q=80&w=1080",
-      "imageHint": "mobile app"
+      "title": "Big Data Analytics Project",
+      "description": "Designed and implemented a Big Data processing solution using Apache Cassandra to manage and query large volumes of distributed data efficiently. Focused on scalability and high availability.",
+      "technologies": "Apache Cassandra, NoSQL, Data Modeling, Tableau, Python",
+      "githubUrl": "https://github.com"
     },
     {
       "id": "project-4",
-      "description": "Creative portfolio website for a digital artist.",
-      "imageUrl": "https://images.unsplash.com/photo-1749934589226-925ea3856929?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHwyfHxwb3J0Zm9saW8lMjBhcnR8ZW58MHx8fHwxNzU5Njg2MjUzfDA&ixlib=rb-4.1.0&q=80&w=1080",
-      "imageHint": "portfolio art"
+      "title": "RFM Model based clustering analysis",
+      "description": "Applied the RFM (Recency, Frequency, Monetary) model to segment customers into meaningful clusters using K-Means clustering, leading to 20% improved marketing personalization and customer retention.",
+      "technologies": "Python, Pandas, Altair AI, RapidMiner, Tableau",
+      "githubUrl": "https://github.com"
+    },
+    {
+      "id": "project-5",
+      "title": "Cloud-Based Data Warehouse using Snowflake",
+      "description": "Designed and implemented a scalable cloud-based data warehouse solution for a healthcare client using Snowflake. Automated ETL pipelines using Azure Data Factory.",
+      "technologies": "Snowflake, SQL, AWS, Python, Tableau, ETL tools",
+      "githubUrl": "https://github.com"
+    },
+    {
+      "id": "project-6",
+      "title": "Symptom Analysis for Monkeypox Diagnosis",
+      "description": "Analyzed patient health data to identify key symptoms of monkeypox outbreaks. Applied machine learning models to improve diagnostic accuracy by 25%.",
+      "technologies": "Python, RapidMiner, Tableau, Decision Trees, Logistic Regression",
+      "githubUrl": "https://github.com"
     }
   ]
 }
