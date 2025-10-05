@@ -68,7 +68,7 @@
 
 @layer utilities {
   .progress-gradient > [data-radix-progress-indicator] {
-    background: linear-gradient(to right, #00A3FF, #E54D69);
+    background: linear-gradient(to right, hsl(var(--primary)), hsl(var(--secondary)));
   }
 
   .section-fade-in {

@@ -63,7 +63,7 @@ export default function SkillsSection() {
           <h2 className="text-3xl md:text-4xl font-bold font-headline">
             Skills & Expertise
           </h2>
-          <div className="mt-2 h-1 w-24 bg-gradient-to-r from-cyan-400 to-pink-500 mx-auto"></div>
+          <div className="mt-2 h-1 w-24 bg-gradient-to-r from-foreground to-muted-foreground mx-auto"></div>
         </div>
         <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
           {Object.entries(skillsData).map(([category, skills]) => (
@@ -72,7 +72,7 @@ export default function SkillsSection() {
               className="bg-white/5 backdrop-blur-lg border border-white/10 shadow-lg group transition-transform duration-300 ease-in-out hover:scale-105 hover:shadow-2xl"
             >
               <CardHeader>
-                <CardTitle className="text-2xl font-bold bg-gradient-to-r from-cyan-400 to-pink-500 text-transparent bg-clip-text">
+                <CardTitle className="text-2xl font-bold bg-gradient-to-r from-foreground to-muted-foreground text-transparent bg-clip-text">
                   {category}
                 </CardTitle>
               </CardHeader>
