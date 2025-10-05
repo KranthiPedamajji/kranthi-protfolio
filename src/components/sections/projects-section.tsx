@@ -1,6 +1,6 @@
 "use client";
 
-import React from "react";
+import React, { useCallback, useEffect, useState, useRef } from "react";
 import { PlaceHolderImages } from "@/lib/placeholder-images";
 import { Card, CardHeader, CardTitle, CardDescription } from "@/components/ui/card";
 import {
@@ -9,17 +9,61 @@ import {
   CarouselItem,
   CarouselNext,
   CarouselPrevious,
+  type CarouselApi,
 } from "@/components/ui/carousel";
 import { Button } from "@/components/ui/button";
 import { Github, ExternalLink } from "lucide-react";
 import Autoplay from "embla-carousel-autoplay";
 import { useSectionInView } from "@/hooks/use-section-in-view";
+import { cn } from "@/lib/utils";
 
 export default function ProjectsSection() {
   const { ref } = useSectionInView("projects", 0.1);
-  const plugin = React.useRef(
+  const [api, setApi] = useState<CarouselApi>();
+  const [current, setCurrent] = useState(0);
+
+  const plugin = useRef(
     Autoplay({ delay: 3000, stopOnInteraction: true })
   );
+
+  const updateCarouselClasses = useCallback(() => {
+    if (!api) {
+      return;
+    }
+    const slides = api.slideNodes();
+    slides.forEach((slide, index) => {
+      slide.classList.remove("is-active");
+    });
+    const inView = api.slidesInView();
+    if(inView.length > 0){
+        const activeSlideIndex = inView[0];
+        if(slides[activeSlideIndex]){
+            slides[activeSlideIndex].classList.add("is-active");
+        }
+    }
+
+  }, [api]);
+
+  useEffect(() => {
+    if (!api) {
+      return;
+    }
+    setCurrent(api.selectedScrollSnap());
+    updateCarouselClasses();
+
+    api.on("select", () => {
+      setCurrent(api.selectedScrollSnap());
+      updateCarouselClasses();
+    });
+
+    api.on("scroll", () => {
+      updateCarouselClasses();
+    });
+    
+    api.on("reInit", updateCarouselClasses)
+
+
+  }, [api, updateCarouselClasses]);
 
   return (
     <section ref={ref} id="projects" className="py-20 md:py-32 bg-background section-fade-in">
@@ -33,18 +77,19 @@ export default function ProjectsSection() {
           </p>
         </div>
         <Carousel
+          setApi={setApi}
           plugins={[plugin.current]}
           onMouseEnter={plugin.current.stop}
           onMouseLeave={plugin.current.reset}
           opts={{
-            align: "start",
+            align: "center",
             loop: true,
           }}
-          className="w-full max-w-6xl mx-auto"
+          className="w-full max-w-2xl mx-auto"
         >
           <CarouselContent>
             {PlaceHolderImages.map((project, index) => (
-              <CarouselItem key={index} className="md:basis-1/2 lg:basis-1/3">
+              <CarouselItem key={index} className="carousel-item">
                 <div className="p-1 h-full">
                   <Card className="overflow-hidden group h-full flex flex-col transition-all duration-300 hover:border-primary hover:shadow-2xl">
                     <CardHeader>
