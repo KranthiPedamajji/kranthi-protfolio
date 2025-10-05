@@ -65,3 +65,9 @@
     @apply scroll-smooth;
   }
 }
+
+@layer utilities {
+  .progress-gradient > [data-radix-progress-indicator] {
+    background: linear-gradient(to right, #00A3FF, #E54D69);
+  }
+}

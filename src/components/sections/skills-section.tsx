@@ -1,36 +1,35 @@
 "use client";
 
 import { useState, useEffect, useRef } from "react";
-import {
-  Code,
-  Database,
-  Cloud,
-  Palette,
-  Server,
-  TerminalSquare,
-  Component,
-  BrainCircuit,
-  GitGraph,
-  ChevronDown,
-} from "lucide-react";
 import { Progress } from "@/components/ui/progress";
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
-import { Button } from "@/components/ui/button";
 
-const skillsData = [
-  { name: "Python", level: 95, icon: <Code className="w-6 h-6" /> },
-  { name: "AWS", level: 85, icon: <Cloud className="w-6 h-6" /> },
-  { name: "Snowflake", level: 80, icon: <Database className="w-6 h-6" /> },
-  { name: "SQL & SQL Server", level: 90, icon: <Database className="w-6 h-6" /> },
-  { name: "Machine Learning", level: 85, icon: <BrainCircuit className="w-6 h-6" /> },
-  { name: "Data Visualization", level: 85, icon: <Palette className="w-6 h-6" /> },
-  { name: "C# & .NET Core", level: 90, icon: <Code className="w-6 h-6" /> },
-  { name: "Angular", level: 80, icon: <Component className="w-6 h-6" /> },
-  { name: "Apache Cassandra", level: 75, icon: <Database className="w-6 h-6" /> },
-  { name: "FHIR & HL7", level: 75, icon: <TerminalSquare className="w-6 h-6" /> },
-  { name: "IoT", level: 70, icon: <Server className="w-6 h-6" /> },
-  { name: "Git", level: 90, icon: <GitGraph className="w-6 h-6" /> },
-];
+const skillsData = {
+  Languages: [
+    { name: "Python", level: 95 },
+    { name: "JavaScript", level: 90 },
+    { name: "C#", level: 85 },
+    { name: "SQL", level: 88 },
+  ],
+  Frameworks: [
+    { name: "FastAPI", level: 92 },
+    { name: "React", level: 88 },
+    { name: "Vue.js", level: 85 },
+    { name: ".NET Core", level: 82 },
+  ],
+  "Cloud & DevOps": [
+    { name: "AWS", level: 90 },
+    { name: "Azure", level: 85 },
+    { name: "GCP", level: 80 },
+    { name: "CI/CD", level: 88 },
+  ],
+  "Data & Analytics": [
+    { name: "Snowflake", level: 90 },
+    { name: "Tableau", level: 88 },
+    { name: "Machine Learning", level: 85 },
+    { name: "ETL Pipelines", level: 92 },
+  ],
+};
 
 const AnimatedSkillBar = ({
   level,
@@ -43,17 +42,16 @@ const AnimatedSkillBar = ({
 
   useEffect(() => {
     if (isVisible) {
-      const timer = setTimeout(() => setProgress(level), 100);
+      const timer = setTimeout(() => setProgress(level), 300);
       return () => clearTimeout(timer);
     }
   }, [isVisible, level]);
 
-  return <Progress value={progress} className="w-full h-2" />;
+  return <Progress value={progress} className="w-full h-2 progress-gradient" />;
 };
 
 export default function SkillsSection() {
   const [isVisible, setIsVisible] = useState(false);
-  const [showAll, setShowAll] = useState(false);
   const sectionRef = useRef<HTMLDivElement>(null);
 
   useEffect(() => {
@@ -72,58 +70,46 @@ export default function SkillsSection() {
     }
 
     return () => {
-      if (observer && sectionRef.current) {
+      if (observer) {
         observer.disconnect();
       }
     };
   }, []);
 
-  const displayedSkills = showAll ? skillsData : skillsData.slice(0, 6);
-
   return (
     <section id="skills" ref={sectionRef} className="py-20 md:py-32 bg-background">
       <div className="container mx-auto px-4 md:px-6">
-        <div className="text-center mb-12">
+        <div className="text-center mb-16">
           <h2 className="text-3xl md:text-4xl font-bold font-headline">
-            Technical Skills
+            Skills & Expertise
           </h2>
-          <p className="text-lg text-foreground/70 mt-2">
-            A snapshot of my technical proficiency.
-          </p>
+          <div className="mt-2 h-1 w-24 bg-gradient-to-r from-cyan-400 to-pink-500 mx-auto"></div>
         </div>
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-          {displayedSkills.map((skill) => (
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
+          {Object.entries(skillsData).map(([category, skills]) => (
             <Card
-              key={skill.name}
-              className="bg-card border border-border/50 hover:border-accent transition-colors"
+              key={category}
+              className="bg-white/5 backdrop-blur-lg border border-white/10 shadow-lg group transition-transform duration-300 ease-in-out hover:scale-105 hover:shadow-2xl"
             >
-              <CardHeader className="flex flex-row items-center justify-between pb-2">
-                <CardTitle className="text-lg font-medium">
-                  {skill.name}
+              <CardHeader>
+                <CardTitle className="text-2xl font-bold bg-gradient-to-r from-cyan-400 to-pink-500 text-transparent bg-clip-text">
+                  {category}
                 </CardTitle>
-                <div className="text-accent-foreground">{skill.icon}</div>
               </CardHeader>
-              <CardContent>
-                <div className="flex items-center gap-4">
-                  <AnimatedSkillBar level={skill.level} isVisible={isVisible} />
-                  <span className="font-semibold text-lg">{skill.level}%</span>
-                </div>
+              <CardContent className="space-y-6">
+                {skills.map((skill) => (
+                  <div key={skill.name}>
+                    <div className="flex justify-between items-center mb-2">
+                      <span className="font-medium">{skill.name}</span>
+                      <span className="text-foreground/80">{skill.level}%</span>
+                    </div>
+                    <AnimatedSkillBar level={skill.level} isVisible={isVisible} />
+                  </div>
+                ))}
               </CardContent>
             </Card>
           ))}
         </div>
-        {skillsData.length > 6 && (
-          <div className="text-center mt-12">
-            <Button
-              variant="outline"
-              onClick={() => setShowAll(!showAll)}
-              className="group"
-            >
-              {showAll ? "Show Less" : "Show More"}
-              <ChevronDown className={`ml-2 h-4 w-4 transition-transform ${showAll ? 'rotate-180' : ''}`} />
-            </Button>
-          </div>
-        )}
       </div>
     </section>
   );
