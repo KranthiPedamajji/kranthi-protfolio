@@ -121,7 +121,8 @@
         "title": "Big Data Analytics Project",
         "description": "Designed and implemented a Big Data processing solution using Apache Cassandra to manage and query large volumes of distributed data efficiently. Focused on scalability and high availability.",
         "technologies": "Apache Cassandra, NoSQL, Data Modeling, Tableau, Python",
-        "githubUrl": "https://github.com"
+        "githubUrl": "https://github.com",
+        "liveUrl": "https://www.youtube.com/watch?v=vJbh-KG5ZYA"
       },
       {
         "id": "project-4",
