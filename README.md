@@ -1,4 +1,4 @@
-# Firebase Studio Portfolio
+# Kranthi's Portfolio
 
 This is a Next.js portfolio project created in Firebase Studio.
 
