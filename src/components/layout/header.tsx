@@ -45,7 +45,7 @@ export default function Header() {
             </Link>
           ))}
            <Button asChild size="sm" variant="outline">
-            <a href={resumeUrl} download>
+            <a href={resumeUrl} download="Kranthi_Pedamajji_Resume.pdf">
               <Download className="mr-2 h-4 w-4" />
               Resume
             </a>
@@ -53,7 +53,7 @@ export default function Header() {
         </nav>
         <div className="md:hidden flex items-center gap-2">
           <Button asChild size="icon" variant="ghost">
-            <a href={resumeUrl} download>
+            <a href={resumeUrl} download="Kranthi_Pedamajji_Resume.pdf">
               <Download className="h-5 w-5" />
                <span className="sr-only">Download Resume</span>
             </a>

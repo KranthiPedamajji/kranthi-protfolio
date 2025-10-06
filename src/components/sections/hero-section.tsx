@@ -35,7 +35,7 @@ export default function HeroSection() {
             <Link href="#projects">{hero.cta.projects}</Link>
           </Button>
           <Button asChild size="lg" variant="outline">
-            <a href={resumeUrl} download>
+            <a href={resumeUrl} download="Kranthi_Pedamajji_Resume.pdf">
               <Download className="mr-2 h-4 w-4" />
               {hero.cta.resume}
             </a>
