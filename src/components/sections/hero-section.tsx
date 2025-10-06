@@ -45,19 +45,19 @@ export default function HeroSection() {
           </Button>
         </div>
         <div className="flex justify-center gap-6 mt-12">
-            <a href={`mailto:${contact.email}`} className="text-foreground/70 hover:text-primary transition-colors">
+            <a href={`mailto:${contact.email}`} className="text-foreground/70 hover:text-primary transition-all duration-300 hover:scale-110">
               <Mail className="h-6 w-6" />
               <span className="sr-only">Email</span>
             </a>
-            <a href={`tel:${contact.phone}`} className="text-foreground/70 hover:text-primary transition-colors">
+            <a href={`tel:${contact.phone}`} className="text-foreground/70 hover:text-primary transition-all duration-300 hover:scale-110">
               <Phone className="h-6 w-6" />
               <span className="sr-only">Phone</span>
             </a>
-            <a href={contact.linkedin} target="_blank" rel="noopener noreferrer" className="text-foreground/70 hover:text-primary transition-colors">
+            <a href={contact.linkedin} target="_blank" rel="noopener noreferrer" className="text-foreground/70 hover:text-primary transition-all duration-300 hover:scale-110">
               <Linkedin className="h-6 w-6" />
               <span className="sr-only">LinkedIn</span>
             </a>
-            <a href={contact.github} target="_blank" rel="noopener noreferrer" className="text-foreground/70 hover:text-primary transition-colors">
+            <a href={contact.github} target="_blank" rel="noopener noreferrer" className="text-foreground/70 hover:text-primary transition-all duration-300 hover:scale-110">
               <Github className="h-6 w-6" />
               <span className="sr-only">GitHub</span>
             </a>

@@ -27,22 +27,22 @@ export default function ContactSection() {
             </CardHeader>
             <CardContent>
                 <div className="flex flex-wrap justify-center gap-4">
-                    <Button variant="outline" asChild size="lg">
+                    <Button variant="outline" asChild size="lg" className="transition-transform duration-300 hover:scale-105">
                         <a href={`mailto:${contact.email}`}>
                             <Mail className="mr-2 h-4 w-4" /> {contact.buttons.email}
                         </a>
                     </Button>
-                     <Button variant="outline" asChild size="lg">
+                     <Button variant="outline" asChild size="lg" className="transition-transform duration-300 hover:scale-105">
                         <a href={`tel:${contact.phone}`}>
                             <Phone className="mr-2 h-4 w-4" /> {contact.buttons.phone}
                         </a>
                     </Button>
-                    <Button variant="outline" asChild size="lg">
+                    <Button variant="outline" asChild size="lg" className="transition-transform duration-300 hover:scale-105">
                         <a href={contact.linkedin} target="_blank" rel="noopener noreferrer">
                             <Linkedin className="mr-2 h-4 w-4" /> {contact.buttons.linkedin}
                         </a>
                     </Button>
-                    <Button variant="outline" asChild size="lg">
+                    <Button variant="outline" asChild size="lg" className="transition-transform duration-300 hover:scale-105">
                         <a href={contact.github} target="_blank" rel="noopener noreferrer">
                             <Github className="mr-2 h-4 w-4" /> {contact.buttons.github}
                         </a>
