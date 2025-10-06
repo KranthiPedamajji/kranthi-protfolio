@@ -15,7 +15,7 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   const isProd = process.env.NODE_ENV === 'production';
-  const repoName = 'kranthis-portfolio';
+  const repoName = 'kranthi-portfolio';
   const basePath = isProd ? `/${repoName}` : '';
 
   return (
