@@ -7,7 +7,7 @@ const isProd = process.env.NODE_ENV === 'production'
 // If this is a project site (e.g., username.github.io/repoName),
 // update this with your repository name.
 // If it's a user/organization site (e.g., username.github.io), leave it as an empty string.
-const repoName = 'kranthis-portfolio' 
+const repoName = 'kranthi-portfolio' 
 
 const nextConfig: NextConfig = {
   // Enables static export
