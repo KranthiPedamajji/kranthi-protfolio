@@ -40,7 +40,7 @@ const nextConfig: NextConfig = {
   trailingSlash: true,
 
   // Sets the base path and asset prefix for project pages on GitHub
-  basePath: '/kranthi-protfolio',,
+  basePath: '/kranthi-protfolio',
   assetPrefix: '/kranthi-protfolio/',
   
   typescript: {
