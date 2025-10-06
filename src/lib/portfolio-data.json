@@ -95,6 +95,14 @@
     "subtitle": "A selection of my recent work.",
     "items": [
       {
+        "id": "project-7",
+        "title": "IoT Wildfire Detection System",
+        "description": "Engineered an end-to-end IoT pipeline for real-time wildfire detection using ESP32-CAM and DHT11 sensors. The system leverages a serverless AWS backend with S3, Glue, Athena, and Rekognition for data processing, analysis, and alerting, with live monitoring via Grafana dashboards.",
+        "technologies": "IoT, ESP32, AWS (S3, Glue, Athena, Rekognition), Grafana, Arduino",
+        "githubUrl": "https://github.com/KranthiPedamajji/fire_detection_iot",
+        "liveUrl": "https://www.youtube.com/watch?v=E4u9NXnlo5A"
+      },
+      {
         "id": "project-1",
         "title": "Predictive Analysis of NFL Running Backs",
         "description": "Conducted a predictive analysis of NFL running backs’ performance using historical data, focusing on key metrics. Developed and deployed machine learning models, including Random Forest and Gradient Boosting, achieving 15% higher prediction accuracy.",
