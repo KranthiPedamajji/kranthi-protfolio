@@ -1,5 +1,6 @@
-
-import type {NextConfig} from 'next';
+/**
+ * @type {import('next').NextConfig}
+ */
 
 // This constant is used to determine if the app is in production
 const isProd = process.env.NODE_ENV === 'production'
@@ -9,7 +10,7 @@ const isProd = process.env.NODE_ENV === 'production'
 // If it's a user/organization site (e.g., username.github.io), leave it as an empty string.
 const repoName = 'kranthi-protfolio' 
 
-const nextConfig: NextConfig = {
+const nextConfig = {
   // Enables static export
   output: 'export',
   // Disables image optimization for static hosts
@@ -40,8 +41,8 @@ const nextConfig: NextConfig = {
   trailingSlash: true,
 
   // Sets the base path and asset prefix for project pages on GitHub
-  basePath: '/kranthi-protfolio',
-  assetPrefix: '/kranthi-protfolio/',
+  basePath: isProd ? `/${repoName}` : '',
+  assetPrefix: isProd ? `/${repoName}/` : '',
   
   typescript: {
     ignoreBuildErrors: true,
