@@ -13,7 +13,7 @@ export default function ContactSection() {
   const { ref } = useSectionInView("contact", 0.5);
 
   return (
-    <section ref={ref} id="contact" className="py-20 md:py-32 section-fade-in">
+    <section ref={ref} id="contact" className="py-20 md:py-32 section-fade-in bg-card">
       <div className="container mx-auto px-4 md:px-6">
         <div className="max-w-2xl mx-auto">
           <Card className="bg-white/5 backdrop-blur-lg border border-white/10 shadow-2xl">

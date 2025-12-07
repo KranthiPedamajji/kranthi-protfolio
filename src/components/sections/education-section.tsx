@@ -12,7 +12,7 @@ export default function EducationSection() {
   const { ref } = useSectionInView("education", 0.2);
 
   return (
-    <section ref={ref} id="education" className="py-20 md:py-32 bg-card section-fade-in">
+    <section ref={ref} id="education" className="py-20 md:py-32 bg-background section-fade-in">
       <div className="container mx-auto px-4 md:px-6">
         <div className="text-center mb-16">
           <h2 className="text-3xl md:text-4xl font-bold font-headline">{educationData.title}</h2>

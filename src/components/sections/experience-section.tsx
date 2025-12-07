@@ -19,22 +19,23 @@ export default function ExperienceSection() {
           <p className="text-lg text-foreground/70 mt-2">{experienceData.subtitle}</p>
         </div>
         <div className="relative max-w-5xl mx-auto">
-          {/* Timeline Line */}
           <div className="absolute left-1/2 top-0 bottom-0 w-0.5 bg-border -translate-x-1/2 hidden md:block"></div>
           
           <div className="space-y-8 md:space-y-12">
             {experienceData.jobs.map((item, index) => (
               <div key={index} className="relative">
-                <div 
-                  className="md:absolute top-1/2 -translate-y-1/2 w-4 h-4 rounded-full bg-primary border-4 border-background hidden md:block" 
-                  style={{ left: '50%', transform: 'translateX(-50%)' }}
+                 <div 
+                  className="md:absolute top-1/2 -translate-y-1/2 w-4 h-4 rounded-full bg-primary border-4 border-card hidden md:block" 
+                  style={{ 
+                    left: '50%', 
+                    transform: index % 2 === 0 ? 'translateX(-50%)' : 'translateX(-50%)'
+                  }}
                 ></div>
                 <div className={`flex flex-col md:items-center ${index % 2 === 0 ? 'md:flex-row' : 'md:flex-row-reverse'}`}>
                   <div className="w-full md:w-5/12 px-4">
-                    {/* Spacer for layout */}
                   </div>
                   <div className="w-full md:w-7/12 px-4">
-                    <Card className={`group transition-transform duration-300 ease-in-out hover:scale-105 hover:shadow-2xl`}>
+                     <Card className={`group transition-transform duration-300 ease-in-out hover:scale-105 hover:shadow-2xl`}>
                       <CardHeader>
                         <CardTitle className="text-xl">{item.role}</CardTitle>
                         <CardDescription>{item.company} &bull; {item.period}</CardDescription>

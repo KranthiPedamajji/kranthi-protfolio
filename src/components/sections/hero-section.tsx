@@ -17,7 +17,7 @@ export default function HeroSection() {
     <section
       ref={ref}
       id="home"
-      className="min-h-screen flex items-center justify-center bg-grid-white/[0.05] relative section-fade-in"
+      className="relative flex min-h-screen items-center justify-center py-20 md:py-32 section-fade-in"
     >
       <div className="absolute pointer-events-none inset-0 flex items-center justify-center bg-background [mask-image:radial-gradient(ellipse_at_center,transparent_20%,black)]"></div>
       <div className="container mx-auto px-4 md:px-6 text-center">
@@ -35,7 +35,7 @@ export default function HeroSection() {
             <Link href="#projects">{hero.cta.projects}</Link>
           </Button>
           <Button asChild size="lg" variant="outline">
-            <a href={resumeUrl} download="Kranthi_Pedamajji_Resume.pdf">
+            <a href={resumeUrl} download>
               <Download className="mr-2 h-4 w-4" />
               {hero.cta.resume}
             </a>

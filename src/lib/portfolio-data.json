@@ -1,4 +1,3 @@
-
 {
   "name": "Kranthi",
   "resumeUrl": "/Kranthi_Pedamajji_Resume.pdf",
@@ -14,11 +13,11 @@
   "hero": {
     "title": "Kranthi's Portfolio",
     "skills": [
+      "AI Engineer.",
       "Data Engineer.",
-      "Full Stack Developer.",
       "Machine Learning Practitioner."
     ],
-    "description": "Versatile Date & Full Stack Engineer with 3+ years of experience building scalable web applications and end-to-end data solutions. Proficient in Python, Node Js, .NET, and SQL for both application development and data workflows.",
+    "description": "AI & Data Engineer with experience building scalable ETL pipelines, NLP systems, LLM-powered workflows, and cloud-native machine learning infrastructure. Skilled in Python, PySpark, AWS, and developing intelligent data-driven applications.",
     "cta": {
       "projects": "View My Work",
       "resume": "Download Resume",
@@ -28,9 +27,10 @@
   "about": {
     "title": "About Me",
     "paragraphs": [
-      "I’m Kranthi Pedamajji, a Python Full Stack Developer and Data Engineer with over 3 years of experience building scalable, cloud-based applications and data solutions. I specialize in Python (FastAPI), C# (.NET Core), Vue.js, React, and SQL/NoSQL databases like PostgreSQL and MongoDB.",
-      "At Quanti LLC, I work on backend systems, cloud deployments on AWS, and integrations with Google AdSense and Meta Ads APIs. My background also includes data pipelines, CI/CD automation, and visual analytics using Tableau and Power BI.",
-      "With a Master’s in Data Science from Rowan University, I bring hands-on experience in machine learning, NLP, and big data technologies. I’m passionate about designing clean, efficient, and intelligent systems that bridge data, cloud, and AI to deliver real-world impact."
+      "I’m Kranthi Pedamajji, an AI & Data Engineer specializing in building scalable data pipelines, NLP systems, and production-ready machine learning workflows. My expertise includes Python, PySpark, cloud-based ETL pipelines, and designing AI-driven solutions across structured and unstructured data.",
+      "At Quanti LLC, I engineered multi-platform ingestion frameworks and a full NLP enrichment pipeline—including translation, sentiment scoring, SBERT relevance modeling, and entity extraction—to support analytics and automation. I also built backend services and AWS-based workflows supporting large-scale processing.",
+      "Previously at CitiusTech (WellSky), I designed and optimized enterprise-grade ETL pipelines using Python, SQL, and PySpark to process healthcare datasets from HL7, FHIR, APIs, and clinical systems. I also implemented data quality frameworks, metadata tracking, and containerized pipelines.",
+      "With a Master’s in Data Science from Rowan University, I bring strong experience in machine learning, NLP, and cloud technologies. I’m passionate about building AI systems that combine robust engineering with scalable ML capabilities."
     ]
   },
   "skills": {
@@ -38,27 +38,27 @@
     "categories": {
       "Languages": [
         { "name": "Python", "level": 95 },
-        { "name": "JavaScript", "level": 90 },
-        { "name": "C#", "level": 85 },
-        { "name": "SQL", "level": 88 }
+        { "name": "JavaScript", "level": 60 },
+        { "name": "SQL", "level": 90 },
+        { "name": "PySpark", "level": 85 }
       ],
       "Frameworks": [
         { "name": "FastAPI", "level": 92 },
-        { "name": "React", "level": 88 },
-        { "name": "Vue.js", "level": 85 },
-        { "name": ".NET Core", "level": 82 }
+        { "name": "TensorFlow", "level": 80 },
+        { "name": "PyTorch", "level": 82 },
+        { "name": "Transformers", "level": 85 }
       ],
       "Cloud & DevOps": [
         { "name": "AWS", "level": 90 },
         { "name": "Azure", "level": 85 },
-        { "name": "GCP", "level": 80 },
+        { "name": "Docker", "level": 88 },
         { "name": "CI/CD", "level": 88 }
       ],
       "Data & Analytics": [
-        { "name": "Snowflake", "level": 90 },
-        { "name": "Tableau", "level": 88 },
-        { "name": "Machine Learning", "level": 85 },
-        { "name": "ETL Pipelines", "level": 92 }
+        { "name": "ETL Pipelines", "level": 95 },
+        { "name": "Snowflake", "level": 85 },
+        { "name": "Machine Learning", "level": 88 },
+        { "name": "NLP / LLMs", "level": 90 }
       ]
     }
   },
@@ -67,25 +67,25 @@
     "subtitle": "My professional journey.",
     "jobs": [
       {
-        "role": "Intern Software Engineer",
+        "role": "Software Engineer (AI & Data Engineering)",
         "company": "Quanti LLC",
-        "period": "Jun 2025 – Present",
-        "description": "Developed and integrated Google AdSense and Meta Ads, designed the backend using Python (FastAPI), and built a responsive frontend with Vue.js. Utilized AWS services for data pipelines and deployed ML models.",
-        "skills": ["Python", "FastAPI", "Vue.js", "AWS", "Google AdSense", "Meta Ads"]
+        "period": "May 2025 – Present",
+        "description": "Engineered large-scale multi-platform ETL pipelines, built a complete NLP enrichment engine (translation, sentiment scoring, SBERT relevance, entity extraction), and deployed cloud-native data services on AWS. Developed FastAPI services powering analytics dashboards and LLM-driven features.",
+        "skills": ["Python", "FastAPI", "AWS", "NLP", "ETL Pipelines", "SBERT", "PostgreSQL"]
       },
       {
-        "role": "Software Engineer",
-        "company": "CitiusTech",
-        "period": "May 2021 – Jun 2023",
-        "description": "Developed scalable web applications using .NET Core and React. Improved application efficiency by 25%, managed the full SDLC, and deployed applications on Microsoft Azure, reducing deployment time by 25%.",
-        "skills": [".NET Core", "React", "Azure", "SQL Server", "CI/CD"]
+        "role": "Senior Data Engineer",
+        "company": "CitiusTech (WellSky)",
+        "period": "May 2021 – Jul 2023",
+        "description": "Designed and optimized enterprise healthcare ETL pipelines using Python, SQL, and PySpark. Processed HL7/FHIR datasets, built metadata-driven workflows, implemented data quality frameworks, and containerized pipelines using Docker and Azure CI/CD.",
+        "skills": ["PySpark", "Python", "ETL Pipelines", "Azure", "SQL Server", "HL7", "FHIR"]
       },
       {
-        "role": "Software Intern",
-        "company": "Tata Strive",
-        "period": "Sep 2020 – Apr 2021",
-        "description": "Built a responsive shopping website using HTML, CSS, and JavaScript. Gained experience with Adobe Photoshop and deployed the application on Microsoft Azure.",
-        "skills": ["HTML", "CSS", "JavaScript", "Azure", "Adobe Photoshop"]
+        "role": "AI & Data Engineer",
+        "company": "Sutherland",
+        "period": "Jun 2019 – May 2021",
+        "description": "Built foundational ETL workflows, developed preprocessing modules for NLP systems, experimented with ML models using scikit-learn and TensorFlow/PyTorch, and contributed to early AI prototypes involving embeddings and classification pipelines.",
+        "skills": ["Python", "ETL Pipelines", "TensorFlow", "PyTorch", "NLP", "Docker"]
       }
     ]
   },
@@ -95,53 +95,23 @@
     "items": [
       {
         "id": "project-7",
-        "title": "IoT Wildfire Detection System",
-        "description": "Engineered an end-to-end IoT pipeline for real-time wildfire detection using ESP32-CAM and DHT11 sensors. The system leverages a serverless AWS backend with S3, Glue, Athena, and Rekognition for data processing, analysis, and alerting, with live monitoring via Grafana dashboards.",
-        "technologies": "IoT, ESP32, AWS (S3, Glue, Athena, Rekognition), Grafana, Arduino",
-        "githubUrl": "https://github.com/KranthiPedamajji/fire_detection_iot",
-        "liveUrl": "https://www.youtube.com/watch?v=E4u9NXnlo5A"
-      },
-      {
-        "id": "project-1",
-        "title": "Predictive Analysis of NFL Running Backs",
-        "description": "Conducted a predictive analysis of NFL running backs’ performance using historical data, focusing on key metrics. Developed and deployed machine learning models, including Random Forest and Gradient Boosting, achieving 15% higher prediction accuracy.",
-        "technologies": "Altair AI, RapidMiner, Tableau, Python",
+        "title": "NLP-Powered ETL Enrichment Pipeline",
+        "description": "Designed a production-grade NLP pipeline for multilingual comment processing, including translation, sentiment scoring, SBERT relevance, lemmatization, and entity extraction. Integrated into a scalable ETL system producing analytics-ready datasets.",
+        "technologies": "NLP, Python, SBERT, NLTK, spaCy, ETL, AWS",
         "githubUrl": "https://github.com"
       },
       {
-        "id": "project-2",
-        "title": "Claims Management System",
-        "description": "Designed and developed a full-stack claims management system to streamline healthcare workflows. Built a secure backend using .NET Core and SQL Server, with a responsive Angular frontend. Deployed on GCP.",
-        "technologies": ".NET Core, SQL Server, Angular, GCP, RESTful APIs, Git",
+        "id": "project-1",
+        "title": "Distributed Social Media Data Aggregation Pipeline",
+        "description": "Implemented a distributed ETL ingestion pipeline using OAuth to extract large-scale data from multiple social platforms, supporting analytics, LLM fine-tuning, and sentiment modeling.",
+        "technologies": "Python, ETL, OAuth, AWS Lambda, PostgreSQL",
         "githubUrl": "https://github.com"
       },
       {
         "id": "project-3",
         "title": "Big Data Analytics Project",
-        "description": "Designed and implemented a Big Data processing solution using Apache Cassandra to manage and query large volumes of distributed data efficiently. Focused on scalability and high availability.",
+        "description": "Built a scalable big data processing solution using Apache Cassandra, focusing on distributed data management, data modeling, and high-availability analytics.",
         "technologies": "Apache Cassandra, NoSQL, Data Modeling, Tableau, Python",
-        "githubUrl": "https://github.com",
-        "liveUrl": "https://www.youtube.com/watch?v=vJbh-KG5ZYA"
-      },
-      {
-        "id": "project-4",
-        "title": "RFM Model based clustering analysis",
-        "description": "Applied the RFM (Recency, Frequency, Monetary) model to segment customers into meaningful clusters using K-Means clustering, leading to 20% improved marketing personalization and customer retention.",
-        "technologies": "Python, Pandas, Altair AI, RapidMiner, Tableau",
-        "githubUrl": "https://github.com"
-      },
-      {
-        "id": "project-5",
-        "title": "Cloud-Based Data Warehouse using Snowflake",
-        "description": "Designed and implemented a scalable cloud-based data warehouse solution for a healthcare client using Snowflake. Automated ETL pipelines using Azure Data Factory.",
-        "technologies": "Snowflake, SQL, AWS, Python, Tableau, ETL tools",
-        "githubUrl": "https://github.com"
-      },
-      {
-        "id": "project-6",
-        "title": "Symptom Analysis for Monkeypox Diagnosis",
-        "description": "Analyzed patient health data to identify key symptoms of monkeypox outbreaks. Applied machine learning models to improve diagnostic accuracy by 25%.",
-        "technologies": "Python, RapidMiner, Tableau, Decision Trees, Logistic Regression",
         "githubUrl": "https://github.com"
       }
     ]
@@ -174,10 +144,10 @@
     "linkedin": "https://www.linkedin.com/in/kranthi-pedamajji-34a10719b/",
     "github": "https://github.com/KranthiPedamajji",
     "buttons": {
-        "email": "Email Me",
-        "phone": "Call Me",
-        "linkedin": "LinkedIn",
-        "github": "GitHub"
+      "email": "Email Me",
+      "phone": "Call Me",
+      "linkedin": "LinkedIn",
+      "github": "GitHub"
     }
   }
 }
