@@ -11,16 +11,33 @@ import { portfolioData } from "@/lib/portfolio-data";
 
 const { name, resumeUrl, navLinks } = portfolioData;
 
+const basePath = "/kranthi-protfolio"
+
 export default function Header() {
   const [isScrolled, setIsScrolled] = React.useState(false);
+  const [activeLink, setActiveLink] = React.useState("#home");
 
   React.useEffect(() => {
     const handleScroll = () => {
       setIsScrolled(window.scrollY > 10);
+      
+      const sections = navLinks.map(link => document.querySelector(link.href));
+      const scrollPosition = window.scrollY + 100;
+
+      for (let i = sections.length - 1; i >= 0; i--) {
+        const section = sections[i] as HTMLElement;
+        if (section && section.offsetTop <= scrollPosition) {
+          setActiveLink(navLinks[i].href);
+          break;
+        }
+      }
     };
+    
     window.addEventListener("scroll", handleScroll);
     return () => window.removeEventListener("scroll", handleScroll);
   }, []);
+
+  const resumePath = `${basePath}${resumeUrl}`;
 
   return (
     <header
@@ -34,18 +51,17 @@ export default function Header() {
           <span className="font-bold text-lg">{name}</span>
         </Link>
         <nav className="hidden md:flex items-center gap-6 text-sm">
-          <div className="flex-grow"></div>
           {navLinks.map((link) => (
             <Link
               key={link.href}
               href={link.href}
-              className="font-medium text-foreground/80 transition-colors hover:text-foreground"
+              className={`font-medium transition-colors ${activeLink === link.href ? 'text-primary' : 'text-foreground/80 hover:text-foreground'}`}
             >
               {link.label}
             </Link>
           ))}
            <Button asChild size="sm" variant="outline">
-            <a href={resumeUrl} download="Kranthi_Pedamajji_Resume.pdf">
+            <a href={resumePath} download>
               <Download className="mr-2 h-4 w-4" />
               Resume
             </a>
@@ -53,7 +69,7 @@ export default function Header() {
         </nav>
         <div className="md:hidden flex items-center gap-2">
           <Button asChild size="icon" variant="ghost">
-            <a href={resumeUrl} download="Kranthi_Pedamajji_Resume.pdf">
+            <a href={resumePath} download>
               <Download className="h-5 w-5" />
                <span className="sr-only">Download Resume</span>
             </a>
